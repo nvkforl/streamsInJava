@@ -10,6 +10,6 @@ public class ListFilterNames {
 		// Filter takes the predicate for filtering
 		List<String> collect = names.parallelStream().filter(s -> s.startsWith("p") || s.startsWith("P"))
 				.collect(Collectors.toList());
-		System.out.println(collect);
+		System.out.println(collect); //[peter, prateek, Parker]
 	}
 }

@@ -1,22 +1,28 @@
 package com.demo.streams.person;
 
+import java.util.List;
+
 public class Person {
 
 	private int id;
 	private String name;
 	private int age;
 	private Department department;
+	private List<String> phone;
 
 	public Person() {
 	}
-
-	public Person(int id, String name, int age, Department department) {
+	
+	public Person(int id, String name, int age, Department department, List<String> phone) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.age = age;
 		this.department = department;
+		this.phone = phone;
 	}
+
+
 
 	public int getId() {
 		return id;
@@ -50,6 +56,20 @@ public class Person {
 		this.department = department;
 	}
 
+	public List<String> getPhone() {
+		return phone;
+	}
+
+	public void setPhone(List<String> phone) {
+		this.phone = phone;
+	}
+
+	@Override
+	public String toString() {
+		return "Person [id=" + id + ", name=" + name + ", age=" + age + ", department=" + department + ", phone="
+				+ phone + "]";
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -58,6 +78,7 @@ public class Person {
 		result = prime * result + ((department == null) ? 0 : department.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((phone == null) ? 0 : phone.hashCode());
 		return result;
 	}
 
@@ -84,12 +105,12 @@ public class Person {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
+		if (phone == null) {
+			if (other.phone != null)
+				return false;
+		} else if (!phone.equals(other.phone))
+			return false;
 		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "Person [id=" + id + ", name=" + name + ", age=" + age + ", department=" + department + "]";
 	}
 
 }

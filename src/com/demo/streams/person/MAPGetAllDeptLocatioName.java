@@ -5,9 +5,10 @@ import java.util.stream.Collectors;
 
 public class MAPGetAllDeptLocatioName {
 	public static void main(String[] args) {
-		List<String> collect = InputDate.personData.stream().map(s -> s.getDepartment().getLocation())
+		List<String> collect = InputData.personData.stream().map(s -> s.getDepartment().getLocation())
 				.collect(Collectors.toList());
 		
-		System.out.println(collect);
+		System.out.println(collect); //[Mysore, Mysore, Mysore, Mysore, Bangalore, Bangalore, 
+									 //Bangalore, Bagalkot, Bagalkot, Bagalkot, chitradurga]
 	}
 }

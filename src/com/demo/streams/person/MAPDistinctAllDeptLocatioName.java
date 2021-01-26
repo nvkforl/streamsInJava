@@ -5,9 +5,9 @@ import java.util.stream.Collectors;
 
 public class MAPDistinctAllDeptLocatioName {
 	public static void main(String[] args) {
-		List<String> collect = InputDate.personData.parallelStream().map(s -> s.getDepartment().getLocation())
+		List<String> collect = InputData.personData.parallelStream().map(s -> s.getDepartment().getLocation())
 				.distinct().collect(Collectors.toList());
 
-		System.out.println(collect);
+		System.out.println(collect);//[Mysore, Bangalore, Bagalkot, chitradurga]
 	}
 }
